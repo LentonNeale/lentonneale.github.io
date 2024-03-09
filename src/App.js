@@ -9,7 +9,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
 
-          Lenton has edited this line
+          Lenton has edited this line, and again?
         </p>
         <a
           className="App-link"
