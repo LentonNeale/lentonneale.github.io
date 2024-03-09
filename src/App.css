@@ -1,5 +1,107 @@
-h1{
-    font-family: "Taviraj", serif;
+/* Global Variables */
+:root {
+    --primary-bg-color: #822626;
+    --left-column-bg-color: #11fc2c;
+    --right-column-bg-color: #f4e808;
+    --header-footer-bg-color: #333;
+    --text-color: #fff;
+    --font-family: "Taviraj", serif;
+    --main-content-width: 60%;
+    --column-width: 20%;
+    --responsive-breakpoint: 768px;
+    /* Responsive breakpoint */
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Full viewport height */
+}
+
+/* Temporary Visual Aid (For Development) */
+* {
+    border: 1px solid red;
+    /* Visualize element boundaries */
+}
+
+/* Typography */
+h1 {
+    font-family: var(--font-family);
     font-weight: 600;
     font-style: italic;
+}
+
+/* Layout Components */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+    /* Flex container for main content, helps push footer down */
+}
+
+.app-body {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    /* Occupies available space between header and footer */
+}
+
+/* Individual Element Styling */
+.main-content {
+    background-color: var(--primary-bg-color);
+    width: var(--main-content-width);
+    margin: 0 auto;
+    min-height: 100%;
+    /* Centers horizontally */
+}
+
+.left-column,
+.right-column {
+    /* Flexible growth */
+    min-height: 100%;
+}
+
+.left-column {
+    background-color: var(--left-column-bg-color);
+}
+
+.right-column {
+    background-color: var(--right-column-bg-color);
+}
+
+/* Header & Footer Styling */
+header,
+footer {
+    background-color: var(--header-footer-bg-color);
+    color: var(--text-color);
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer {
+    align-self: stretch;
+    /* Match parent width */
+}
+
+/* Responsive Design */
+@media (max-width: var(--responsive-breakpoint)) {
+
+    .left-column,
+    .right-column {
+        display: none;
+        /* Hide side columns on narrow screens */
+    }
+
+    .main-content {
+        width: 100%;
+        /* Full width on mobile */
+    }
 }
