@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.5107beca.css","mappings":"AAAA,sBACE,mBACF","sources":["App.css"],"sourcesContent":[".nav-link.active-link {\r\n  color: #f00 !important; /* Change to your desired color */\r\n}\r\n"],"names":[],"sourceRoot":""}
