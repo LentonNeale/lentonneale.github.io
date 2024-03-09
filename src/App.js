@@ -1,7 +1,7 @@
 // First, organize imports for better readability: library imports first, then components, and finally styles.
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Note adding 'Routes'
-import Navbar from './components/NavBar'; // Adjust the file path to follow a standard project structure.
+import Navbar from './components/NavBar/NavBar'; // Adjust the file path to follow a standard project structure.
 import Home from './components/pages/Home';
 import About from './components/pages/About'; // Keeping this import as it's logically placed.
 import MyCV from './components/pages/MyCV';

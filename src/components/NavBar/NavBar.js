@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../App.css'; // Assuming CSS is required for styling these components
+import './NavBar.css'; // Assuming CSS is required for styling these components
 
 // Single file containing both components for simplicity
 
