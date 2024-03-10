@@ -3,7 +3,7 @@
   }
   /* General navbar styling */
   .navbar {
-    background-color: #f8f9fa; /* Light gray background, adjust as needed */
+    background-color: #06eded4e; /* Light gray background, adjust as needed */
     box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
   }
   
@@ -54,7 +54,7 @@
   }
   
   .dropdown-item:hover {
-    background-color: #f8f9fa; /* Light background on hover */
+    background-color: #f8f9fa00; /* Light background on hover */
   }
   
   /* Toggler icon */

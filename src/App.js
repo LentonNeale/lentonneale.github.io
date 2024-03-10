@@ -1,41 +1,27 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/NavBar/NavBar';
-import LeftColumn from './components/Columns/LeftColumn';
-import RightColumn from './components/Columns/RightColumn';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/H_and_F/Header';
+import Navbar from './components/NavBar/NavBar';
 import Footer from './components/H_and_F/Footer';
-import Home from './components/pages/Home';
-import About from './components/pages/About';
-import MyCV from './components/pages/MyCV';
+import MainBody from './components/pages/MainBody/MainBody'; // Updated import for MainBody component
 import './App.css';
+
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
-        {/* content-wrap div wraps all content except the header and footer */}
         <Header />
         <Navbar />
-        <div className="content-wrap">
-            <LeftColumn />
-            <main className="main-content">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/MyCV" element={<MyCV />} />
-              </Routes>
-            </main>
-            <RightColumn />
-        </div>
+        <div className='main-content'>
+          <Routes>
+            <Route path="*" element={<MainBody />} />
+          </Routes>
+          </div>
         <Footer />
       </div>
-    </BrowserRouter>
+    </Router>
   );
-}
+};
 
-
-
-
-  export default App;
+export default App;

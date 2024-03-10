@@ -65,7 +65,7 @@ const NavBar = () => {
   // The active path represents the currently active NavItem
   const activePath = location.pathname;
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
-  const isProjectsActive = activePath.startsWith('/project');
+  // const isProjectsActive = activePath.startsWith('/project');
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">

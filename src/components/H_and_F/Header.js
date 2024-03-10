@@ -1,12 +1,11 @@
 // in src/components/Header.js
 import React from 'react';
+import h_image from '../../images/header_image1.jpg';
+import './H_and_F.css';
 
 const Header = () => (
   <header>
-    <nav>
-      {/* Your navigation or header content here */}
-      <h1>My Website Header</h1>
-    </nav>
+    <h1> Header </h1>
   </header>
 );
 
