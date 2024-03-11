@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/H_and_F/Header';
 import Navbar from './components/NavBar/NavBar';
 import Footer from './components/H_and_F/Footer';
@@ -9,6 +9,7 @@ import './App.css';
 
 function App() {
   return (
+    <React.StrictMode>
     <Router>
       <div className="App">
         <Header />
@@ -21,6 +22,8 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </React.StrictMode>,
+  document.getElementById('root')
   );
 };
 

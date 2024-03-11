@@ -5,7 +5,7 @@ import './H_and_F.css';
 
 const Header = () => (
   <header>
-    <h1> Header </h1>
+    <h1> My Personal Portfolio </h1>
   </header>
 );
 
