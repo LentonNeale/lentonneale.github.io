@@ -1,20 +1,6 @@
-header{
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    height: 160px;
-    /* border: 1px solid #00f531; */
-}
-
-
-
 /* Header & Footer Styling */
 header,
 footer {
-    background-color: var(--header-footer-bg-color);
-    color: var(--text-color);
     padding: 10px 0;
     text-align: center;
     /* border: 1px solid rgb(13, 1, 1); */

@@ -1,36 +1,18 @@
-/* Global Variables */
+/* Global Variables
 :root {
     --primary-bg-color: #3120205f;
     --left-column-bg-color: #3120205f;
     --right-column-bg-color: #3120205f;
     --header-footer-bg-color: #333;
     --text-color: #fff;
-    --font-family: "Taviraj", serif;
     --main-content-width: 90%;
     --column-width: 5%;
     --responsive-breakpoint: 768px;
-    /* Responsive breakpoint */
 }
-
-/* Base Styles */
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* Full viewport height */
-}
+ */
 
 
-/* Typography */
-h1 {
-    font-family: var(--font-family);
-    font-weight: 600;
-    font-style: italic;
-    text-align: center;
-    color: #fff;
-}
+
 
 /* Layout Components */
 .App {
@@ -41,7 +23,49 @@ h1 {
 }
 
 
+/* LAyout for main window ensures sidebars are on either side of the main window, flex display!*/
+.app-content{
+    /* border: 5px solid red; */
+    display: flex;
+    flex-direction: row;
+    height: 100vh; 
+}
 
+.main-content{
+    flex:3;
+    background-color: #fff;
+}
+
+.right-sidebar,
+.left-sidebar{
+    flex: 1;
+    /* width: 15%; */
+}
+
+.right-sidebar{
+    background-color: #ffbf69;
+}
+.left-sidebar{
+    background-color: #cbf3f0;
+}
+
+header,
+footer {
+    padding: 10px 0;
+    text-align: center;
+    background-color: #2ec4b6;
+}
+
+
+
+/* Typography */
+h1 {
+    color: #fff;
+    font-family: "Taviraj", serif;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+}
 
 
 /* Responsive Design 

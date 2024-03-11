@@ -7,14 +7,10 @@ h1 {
 }
 
 .left-sidebar{
-    width:10%;
-    flex-grow: 1;
-    outline: 1px solid red;
+    background-color: rgba(19, 19, 19, 0.575);
 }
 
 .right-sidebar{
-    width: 10%;
-    flex-grow: 1;
-    color: 1px solid green;
+    background-color: rgba(19, 19, 19, 0.575);
 }
 

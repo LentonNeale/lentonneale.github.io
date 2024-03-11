@@ -12,7 +12,7 @@ const LeftSidebar = ({ dynamicLinks }) => {
   }, [location.pathname, dynamicLinks]);
 
   return (
-    <aside className="left-sidebar">
+    <aside className='left-sidebar'>
       <h1> Left SideBar </h1>
       {dynamicLinks && dynamicLinks.map((link) => (
         <Link key={link.to} to={link.to} className={location.pathname === link.to ? 'active' : ''}>

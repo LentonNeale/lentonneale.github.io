@@ -1,15 +1,13 @@
 .main-content{
     display: flex;
     flex-direction: row;
-    height: 100vh;
-    outline: 2px solid purple;
-}
-
-.main-body{
-    flex: auto;
-    width: 80%;
-    outline: 2px solid greenyellow;
+    text-align: center;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 
+h2{
+    color: aqua;
+}
 

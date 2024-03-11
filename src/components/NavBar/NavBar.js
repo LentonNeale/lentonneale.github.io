@@ -81,14 +81,7 @@ const NavBar = () => {
           <NavItem to="/" label="Home" active={activePath === '/'} />
           <NavItem to="/about" label="About Me" active={activePath === '/about'} />
           <NavItem to="/MyCV" label="My CV" active={activePath === '/MyCV'} />
-          <NavItem label="My Projects" dropdown>
-            {/* Using Link as children */}
-            <Link to="/project1">Project 1</Link>
-            <Link to="/project2">Project 2</Link>
-            {/* You can also include other elements as needed */}
-            <div className="dropdown-divider"></div>
-            <Link to="/project3">Project 3</Link>
-          </NavItem>
+          <NavItem to="/MyProjects" label="My Projects" active={activePath === '/MyCV'} />
         </ul>
       </div>
     </nav>
