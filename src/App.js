@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/H_and_F/Header';
 import Navbar from './components/NavBar/NavBar';
 import Footer from './components/H_and_F/Footer';
@@ -13,17 +13,16 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Navbar />
+        <Navbar /> 
         <div className='app-content'>
           <Routes>
             <Route path="*" element={<MainBody />} />
           </Routes>
           </div>
-        <Footer />
+       <Footer />
       </div>
     </Router>
-    </React.StrictMode>,
-  document.getElementById('root')
+    </React.StrictMode>
   );
 };
 

@@ -8,9 +8,12 @@ h1 {
 
 .left-sidebar{
     background-color: rgba(19, 19, 19, 0.575);
+    display: flex;
+    flex-direction: column;
 }
 
 .right-sidebar{
     background-color: rgba(19, 19, 19, 0.575);
 }
+
 
