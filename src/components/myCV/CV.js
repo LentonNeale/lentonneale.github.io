@@ -2,6 +2,11 @@ import React from 'react';
 
 const CV = () => {
   // Add dynamicLinks property for the LeftSidebar
+  /*
+  Left bar to navigate / qick select areas i.e Experince, Education, PDF copy
+  Content in main body
+  Right bar skills and or timeline
+  */
   CV.dynamicLinks = [
     { to: '/MyCV', label: 'My CV' },
     { to: '/MyCV/experience', label: 'Experience' },

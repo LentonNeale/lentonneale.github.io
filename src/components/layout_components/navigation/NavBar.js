@@ -49,7 +49,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">Portfolio</Link>
+      <Link className="navbar-brand" to="/home">Portfolio</Link>
       <button className="navbar-toggler"
         onClick={handleNavCollapse}
         aria-expanded={!isNavCollapsed}
@@ -58,7 +58,7 @@ const NavBar = () => {
       </button>
       <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <NavItem to="/" label="Home" active={activePath === '/'} />
+          <NavItem to="/home" label="Home" active={activePath === '/'} />
           <NavItem to="/about" label="About Me" active={activePath === '/about'} />
           <NavItem to="/MyCV" label="My CV" active={activePath === '/MyCV'} />
           <NavItem to="/MyProjects" label="My Projects" active={activePath === '/MyProjects'} />
