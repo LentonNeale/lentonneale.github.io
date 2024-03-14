@@ -2,7 +2,9 @@ import React from 'react';
 
 const MyProjects = () => {
   // Add dynamicLinks property for the LeftSidebar
-  MyProjects.dynamicLinks = [{ to: '/projects', label: 'My Projects' }];
+  MyProjects.dynamicLinks = [{ to: '/project1', label: 'This Website' },
+  { to: '/project2', label: 'Assistant Team' },
+ ];
 
   return (
     <div>
