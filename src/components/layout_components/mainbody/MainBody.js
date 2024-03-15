@@ -9,6 +9,7 @@ import AboutMe from '../../about/AboutMe';
 import CV from '../../myCV/CV';
 import MyProjects from '../../myprojects/MyProjects';
 import Home from '../../home/Home';
+import PageNotFound from '../../PageNotFound';
 
 import './MainBody.css'; // Importing CSS for styling the main body component.
 
@@ -52,6 +53,7 @@ const MainBody = () => {
           <Route path="/about" element={<AboutMe />} />
           <Route path="/MyCV" element={<CV />} /> {/* Ensure this matches the dynamic link logic */}
           <Route path="/MyProjects" element={<MyProjects />} />
+          <Route path= "*" element={<PageNotFound /> } />
           {/* Placeholder comment indicates where additional routes can be added. */}
         </Routes>
       </div>
