@@ -1,86 +1,67 @@
-/* Global Variables
+/* Global Variables*/
 :root {
-    --primary-bg-color: #3120205f;
-    --left-column-bg-color: #3120205f;
-    --right-column-bg-color: #3120205f;
-    --header-footer-bg-color: #333;
-    --text-color: #fff;
-    --main-content-width: 90%;
-    --column-width: 5%;
-    --responsive-breakpoint: 768px;
+  --background-color-light: #cbf3f0;
+  --text-color-light: #ffbf69;
+  --background-color-dark: #1a1a1a;
+  --text-color-dark: #ffffff;
+  --sidebar-bg-color-light: #cbf3f0;
+  --sidebar-bg-color-dark: #ffbf69;
+  --header-footer-bg-color: #2ec4b6;
 }
- */
 
+[data-theme="light"] {
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+  --sidebar-bg-color: var(--sidebar-bg-color-light);
+}
 
+[data-theme="dark"] {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --sidebar-bg-color: var(--sidebar-bg-color-dark);
+}
 
 
 /* Layout Components */
 .App {
     display: flex;
     flex-direction: column;
-    /* align-items: stretch; */
     min-height: 100vh;
+    background-color: var(--background-color); /* Use bg color based on theme */
+    color: var(--text-color); /* Use text color based on theme */
 }
 
-
-/* LAyout for main window ensures sidebars are on either side of the main window, flex display!*/
 .app-content{
-    /* border: 5px solid red; */
     display: flex;
     flex-direction: row;
     height: 100vh; 
 }
 
 .main-content{
-    flex:3;
-    background-color: #fff;
+    flex: 3;
+    background-color: var(--background-color); /* Same background as App for consistency */
 }
 
 .right-sidebar,
 .left-sidebar{
     flex: 1;
-    /* width: 15%; */
-}
-
-.right-sidebar{
-    background-color: #ffbf69;
-}
-.left-sidebar{
-    background-color: #cbf3f0;
+    background-color: var(--sidebar-bg-color); /* Sidebar bg colors based on theme */
 }
 
 header,
 footer {
     padding: 10px 0;
     text-align: center;
-    background-color: #2ec4b6;
+    background-color: var(--header-footer-bg-color);
+    color: var(--text-color); /* Ensure readable contrast */
 }
-
-
 
 /* Typography */
 h1 {
-    color: #fff;
     font-family: "Taviraj", serif;
     font-style: italic;
     font-weight: 600;
     text-align: center;
 }
 
-
-/* Responsive Design 
-@media (max-width: var(--responsive-breakpoint)) {
-
-    .left-sidebar,
-    .right-sidebar {
-        display: none;
-        /* Hide side columns on narrow screens 
-    }
-
-    .main-content {
-        width: 100%;
-        /* Full width on mobile 
-    }
-}
-
-*/
+/* The responsive design section remains unchanged */

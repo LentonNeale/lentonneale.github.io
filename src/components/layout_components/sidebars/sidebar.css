@@ -3,17 +3,17 @@ h1 {
     font-weight: 600;
     font-style: italic;
     text-align: center;
-    color: blue;
+    color: var(--text-color);
 }
 
 .left-sidebar{
-    background-color: rgba(19, 19, 19, 0.575);
+    /* background-color: var(--background-color); */
     display: flex;
     flex-direction: column;
 }
-
+/* 
 .right-sidebar{
-    background-color: rgba(19, 19, 19, 0.575);
-}
+    background-color: var(--background-color);
+} */
 
 
