@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../../theme/ThemeContext';
 import './NavBar.css';
 
 const NavItem = ({ to, label, active = false, dropdown = false, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { theme } = useTheme();
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   if (dropdown) {
@@ -44,12 +45,13 @@ const NavBar = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const location = useLocation();
   const activePath = location.pathname;
+  const { theme } = useTheme();
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/home">Portfolio</Link>
+    <nav className='navbar' data-theme={theme}>
+      <Link className='navbar-brand' to="/home">Portfolio</Link>
       <button className="navbar-toggler"
         onClick={handleNavCollapse}
         aria-expanded={!isNavCollapsed}

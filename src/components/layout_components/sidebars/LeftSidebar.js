@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sidebar, Menu, SubMenu, MenuItem } from 'react-pro-sidebar';
-import { useTheme } from '../theme/ThemeContext'; // Ensure this path is correct
+import { useTheme } from  '../../theme/ThemeContext'; // Ensure this path is correct
 import './sidebar.css';
 
 const LeftSidebar = ({ dynamicLinks }) => {
@@ -14,7 +14,7 @@ const LeftSidebar = ({ dynamicLinks }) => {
 
   return (
     // Apply dynamic theme className to adjust styles based on the current theme
-    <aside className={`left-sidebar ${theme}-theme`} aria-label="Sidebar Navigation">
+    <aside className='left-sidebar' data-theme={theme} aria-label="Sidebar Navigation">
       <h1>Left Sidebar</h1>
       <Sidebar>
         <Menu >
