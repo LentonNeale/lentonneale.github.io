@@ -1,0 +1,23 @@
+@media (min-width: 992px) {
+
+    /* Ensures the nav-item links are aligned vertically in a column */
+    .navbar-nav{
+        display:flex;
+        flex-direction: row;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+        /* More vertical spacing between nav items */
+    }
+
+    /* Makes dropdowns align horizontally with other nav-items */
+    .dropdown-menu {
+        position: static;
+        float: none;
+    }
+    .navbar-toggler {
+        display: none;
+      }
+}
+

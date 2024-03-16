@@ -1,23 +1,43 @@
 /* Global Variables */
 :root {
-  --background-color: #cbf3f0; /* Default to light theme */
+  --background-color: #f6fdf6; /* Default to light theme */
   --text-color: #ffbf69; /* Default to light theme */
-  --sidebar-bg-color: #cbf3f0; /* Default to light theme */
+  --sidebar-bg-color: #0af0e079; /* Default to light theme */
   --header-footer-bg-color: #2ec4b6; /* Common for both themes */
   --navbar-brand-color: #007bff; /* Bootstrap blue, common for both themes */
   --navbar-brand-hover-color: #0056b3; /* Darker shade for hover state, common for both themes */
   --link-color: #007bff; /* Link color, common for both themes */
   --dropdown-item-color: #333; /* Dropdown item text color, light theme */
   --dropdown-bg-hover: #f8f9fa00; /* Light background on hover for dropdown items, light theme */
+  --background-color-main_window: #00000044;
+  --background-color-right_sidebar: #04dce062;
+  --background-color-left_sidebar: #ffb8056b;
+  --navbar-background: #393a3a83;
+  --navbar-toggler-color: #49474743;
+  --navbar-box-shadow: #000000;
+  --navbar-toggler-icon-color: #000000;
 }
 
 [data-theme="dark"] {
   --background-color: #1a1a1a;
   --text-color: #ffffff;
   --sidebar-bg-color: #ffbf69;
+  --header-footer-bg-color: #4443435d; /* Common for both themes */
   --dropdown-item-color: #ccc; /* Lighter text color for dark theme dropdown items */
   --dropdown-bg-hover: #2a2a2a; /* Darker background on hover for dark theme */
+  --background-color-main_window: #f4f2f252;
+  --background-color-right_sidebar: #242424;
+  --background-color-left_sidebar: #242424;
+  --navbar-background: #616565b3;
+  --navbar-toggler-color: #fff5f5;
+  --navbar-toggler-icon-color: #00000074;
+  --navbar-box-shadow: #ffffff;
 }
+
+
+
+
+
 
 /* Layout Components */
 .App {
@@ -44,12 +64,20 @@
   color: var(--text-color);
 }
 
-.main-content,
-.right-sidebar,
-.left-sidebar {
-  background-color: var(--background-color);
+.main-content{
+  background-color: var(--background-color-main_window);
 }
 
+.right-sidebar{
+  background-color: var(--background-color-right_sidebar);
+}
+
+.left-sidebar {
+  background-color: var(--background-color-left_sidebar);
+}
+
+
+ /* Ok */
 .header,
 .footer {
   padding: 10px 0;
@@ -66,6 +94,11 @@ h1 {
   text-align: center;
 }
 
+h2{
+  color: aqua;
+}
+
+
 /* Navbar and Dropdown Styles */
 .navbar-brand,
 .nav-link,
@@ -81,4 +114,16 @@ h1 {
 .nav-link.active-link,
 .dropdown-item:hover {
   background-color: var(--dropdown-bg-hover);
+}
+
+.navbar {
+  background-color: var(--navbar-background); /* Light gray background, adjust as needed */
+  box-shadow: 0 2px 4px var(--navbar-box-shadow); /* Subtle shadow for depth */
+}
+
+.navbar-toggler{
+  background-color: var(--navbar-toggler-color);
+}
+.navbar-toggler-icon{
+  color: var(--navbar-toggler-icon-color);
 }

@@ -59,7 +59,7 @@ const NavBar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav">
           <NavItem to="/home" label="Home" active={activePath === '/'} />
           <NavItem to="/about" label="About Me" active={activePath === '/about'} />
           <NavItem to="/MyCV" label="My CV" active={activePath === '/MyCV'} />
