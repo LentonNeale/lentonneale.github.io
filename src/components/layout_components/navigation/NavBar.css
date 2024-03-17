@@ -1,23 +1,96 @@
-@media (min-width: 992px) {
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-menu {
+    display: flex; /* Always display the menu */
+  }
+  
+  .navbar-menu.show-menu {
+    display: block; /* Hide the menu when showDropDown state is false */
+  }
+  
+  .nav-elements {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 
-    /* Ensures the nav-item links are aligned vertically in a column */
-    .navbar-nav{
-        display:flex;
-        flex-direction: row;
-    }
+  .navbar-toggler{
+    display: none;
+  }
+  
+  .nav-item {
+    margin-right: 1rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+  }
+  
+  .nav-link.active-link {
+    font-weight: bold;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+  }
 
-    .nav-item {
-        margin: 0.5rem 0;
-        /* More vertical spacing between nav items */
-    }
+  .navbar-toggler{
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px; /* Rounded corners */
+    padding: 5px; /* Padding inside the box */
+    margin: 2px; /* Margin around the box */
+  }
+  .navbar-toggler-icon{
 
-    /* Makes dropdowns align horizontally with other nav-items */
-    .dropdown-menu {
-        position: static;
-        float: none;
-    }
-    .navbar-toggler {
-        display: none;
-      }
+  }
+
+  
+  .bar{
+    height: 5px;
+    margin: 12%;
+  }
+  
+  @media (max-width: 960px) {
+.navbar-menu{
+    display: none;
 }
 
+    .navbar-menu.show-menu {
+      display: block; /* Show the menu when showDropDown state is true */
+    }
+  
+    .nav-item.dropdown {
+      position: relative;
+    }
+  
+    .dropdown-menu {
+      top: 100%;
+      left: 0;
+    }
+    
+  .navbar-toggler{
+    display: flex;
+  }
+  }
+  

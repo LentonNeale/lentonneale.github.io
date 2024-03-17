@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../theme/ThemeContext';
 import './NavBar.css';
@@ -8,9 +8,12 @@ const NavItem = ({ to, label, active = false, dropdown = false, children }) => {
   const { theme } = useTheme();
   const toggleDropdown = () => setIsOpen(!isOpen);
 
+  const navItemClasses = `nav-item ${active ? 'active' : ''}`;
+  const navLinkClasses = `nav-link ${active ? 'active-link' : ''}`;
+
   if (dropdown) {
     return (
-      <li className={`nav-item dropdown ${isOpen ? 'show' : ''}`}>
+      <li className={`nav-item dropdown ${isOpen ? 'show' : ''}`} data-theme={theme}>
         <button
           className={`nav-link dropdown-toggle ${active ? 'active-link' : ''}`}
           onClick={toggleDropdown}
@@ -18,9 +21,8 @@ const NavItem = ({ to, label, active = false, dropdown = false, children }) => {
           aria-expanded={isOpen}>
           {label}
         </button>
-        <div className={`dropdown-menu ${isOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown">
+        <div className={`dropdown-menu ${isOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown" data-theme={theme}>
           {React.Children.map(children, (child, index) => {
-            // Adding className 'dropdown-item' to each child if it's a React element
             if (React.isValidElement(child)) {
               return React.cloneElement(child, {
                 key: index,
@@ -35,39 +37,62 @@ const NavItem = ({ to, label, active = false, dropdown = false, children }) => {
   }
 
   return (
-    <li className={`nav-item ${active ? 'active' : ''}`}>
-      <Link className={`nav-link ${active ? 'active-link' : ''}`} to={to}>{label}</Link>
+    <li className={navItemClasses} data-theme={theme}>
+      <Link className={navLinkClasses} to={to}>{label}</Link>
     </li>
   );
 };
 
 const NavBar = () => {
-  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const [showDropDown, setShowDropDown] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
   const activePath = location.pathname;
   const { theme } = useTheme();
 
-  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+  const toggleMenu = () => setShowDropDown(!showDropDown);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 960);
+      setShowDropDown(false); // Close menu when screen size changes
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   return (
-    <nav className='navbar' data-theme={theme}>
-      <Link className='navbar-brand' to="/home">Portfolio</Link>
-      <button className="navbar-toggler"
-        onClick={handleNavCollapse}
-        aria-expanded={!isNavCollapsed}
-        aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarSupportedContent">
-        <ul className="navbar-nav">
-          <NavItem to="/home" label="Home" active={activePath === '/'} />
-          <NavItem to="/about" label="About Me" active={activePath === '/about'} />
-          <NavItem to="/MyCV" label="My CV" active={activePath === '/MyCV'} />
-          <NavItem to="/MyProjects" label="My Projects" active={activePath === '/MyProjects'} />
-        </ul>
-      </div>
+    <nav className='navbar-container' data-theme={theme}>
+      <div className='navbar-brand'> Portfolio </div>
+      {isMobile ? (
+        <button className="navbar-toggler"
+          onClick={toggleMenu}
+          aria-expanded={showDropDown}
+          aria-label="Toggle navigation"
+          data-theme={theme}>
+          <span className="navbar-toggler-icon">
+            <div className='bar'></div>
+            <div className='bar'></div>
+            <div className='bar'></div>
+          </span>
+
+        </button>
+      ) : (
+        <div className={`navbar-menu ${showDropDown ? 'show-menu' : ""}`} id='nav-menu' data-theme={theme}>
+          <ul className='nav-elements'>
+            <NavItem to="/home" label="Home" active={activePath === '/'} />
+            <NavItem to="/about" label="About Me" active={activePath === '/about'} />
+            <NavItem to="/MyCV" label="My CV" active={activePath === '/MyCV'} />
+            <NavItem to="/MyProjects" label="My Projects" active={activePath === '/MyProjects'} />
+          </ul>
+        </div>
+      )}
     </nav>
   );
+
 };
 
 export default NavBar;
