@@ -1,9 +1,13 @@
-h1 {
+.h1-sidebar {
     font-family: var(--font-family);
     font-weight: 600;
     font-style: italic;
     text-align: center;
     color: var(--text-color);
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 2em;
 }
 
 .left-sidebar{

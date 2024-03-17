@@ -6,6 +6,10 @@ footer {
     /* border: 1px solid rgb(13, 1, 1); */
 }
 
+header{
+    height: 100px;
+}
+
 footer {
     align-self: stretch;
     /* Match parent width */

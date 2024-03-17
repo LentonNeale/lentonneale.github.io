@@ -83,7 +83,7 @@ const NavBar = () => {
       ) : (
         <div className={`navbar-menu ${showDropDown ? 'show-menu' : ""}`} id='nav-menu' data-theme={theme}>
           <ul className='nav-elements'>
-            <NavItem to="/home" label="Home" active={activePath === '/'} />
+            <NavItem to="/home" label="Home" active={activePath === '/home'} />
             <NavItem to="/about" label="About Me" active={activePath === '/about'} />
             <NavItem to="/MyCV" label="My CV" active={activePath === '/MyCV'} />
             <NavItem to="/MyProjects" label="My Projects" active={activePath === '/MyProjects'} />

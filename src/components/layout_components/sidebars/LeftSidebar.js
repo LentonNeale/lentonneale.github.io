@@ -15,11 +15,11 @@ const LeftSidebar = ({ dynamicLinks }) => {
   return (
     // Apply dynamic theme className to adjust styles based on the current theme
     <aside className='left-sidebar' data-theme={theme} aria-label="Sidebar Navigation">
-      <h1>Left Sidebar</h1>
+      <h1 className='h1-sidebar'>Left Sidebar</h1>
       <Sidebar>
         <Menu >
           {/* <SubMenu label="Theme"> */}
-            <MenuItem onClick={toggleTheme}>Toggle Theme</MenuItem>
+            <MenuItem className='toggle_button' onClick={toggleTheme}>Toggle Theme</MenuItem>
           {/* </SubMenu> */}
           {dynamicLinks.map((link) => (
             <MenuItem key={link.to}>

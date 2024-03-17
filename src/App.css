@@ -1,12 +1,11 @@
 /* Global Variables */
 :root {
-  --background-color: #f6fdf6;
   /* Default to light theme */
   --text-color: #ffbf69;
   /* Default to light theme */
   --sidebar-bg-color: #0af0e079;
   /* Default to light theme */
-  --header-footer-bg-color: #2ec4b6;
+  /* --header-footer-bg-color: #2ec4b6; */
   /* Common for both themes */
   --navbar-brand-color: #007bff;
   /* Bootstrap blue, common for both themes */
@@ -18,7 +17,7 @@
   /* Dropdown item text color, light theme */
   --dropdown-bg-hover: #f8f9fa00;
   /* Light background on hover for dropdown items, light theme */
-  --background-color-main_window: #00000044;
+  --background-color-main_window: #4843d5;
   --background-color-right_sidebar: #04dce062;
   --background-color-left_sidebar: #ffb8056b;
   --navbar-background: #5f848483;
@@ -27,19 +26,19 @@
   --navbar-toggler-icon-color: #00000026;
   --navbar-text-colour: #1a1c3d;
   --navbar-active-text-colour: #131dcc;
+  --navbar-brand-color: #8f9295;
 }
 
 [data-theme="dark"] {
-  --background-color: #1a1a1a;
   --text-color: #ffffff;
   --sidebar-bg-color: #ffbf69;
-  --header-footer-bg-color: #4443435d;
+  /* --header-footer-bg-color: #4443435d; */
   /* Common for both themes */
   --dropdown-item-color: #ccc;
   /* Lighter text color for dark theme dropdown items */
   --dropdown-bg-hover: #2a2a2a;
   /* Darker background on hover for dark theme */
-  --background-color-main_window: #f4f2f252;
+  --background-color-main_window: #060606;
   --background-color-right_sidebar: #242424;
   --background-color-left_sidebar: #242424;
   --navbar-background: #687268b3;
@@ -48,6 +47,7 @@
   --navbar-box-shadow: #ffffff;
   --navbar-text-colour: #525af3;
   --navbar-active-text-colour: #0c18f6;
+  --navbar-brand-color: #fefefe;
 }
 
 
@@ -60,7 +60,6 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--background-color);
   color: var(--text-color);
 }
 
@@ -71,12 +70,12 @@
 }
 
 .content-title {
-  background-color: var(--background-color);
+  background-color: var(--background-color-main_window);
   color: var(--text-color);
 }
 
 .content-body {
-  background-color: var(--background-color);
+  background-color: var(--background-color-main_window);
   color: var(--text-color);
 }
 
@@ -92,13 +91,10 @@
   background-color: var(--background-color-left_sidebar);
 }
 
-
-/* Ok */
+/* Header footer */
 .header,
 .footer {
-  padding: 10px 0;
-  text-align: center;
-  background-color: var(--header-footer-bg-color);
+  background-color: var(--background-color-main_window);
   color: var(--text-color);
 }
 
@@ -114,18 +110,16 @@ h2 {
   color: aqua;
 }
 
-/* NavBar colours */
-/* --navbar-background: #393a3a83;
---navbar-toggler-color: #49474743;
---navbar-box-shadow: #000000;
---navbar-toggler-icon-color: #000000; */
+
+/* Navbar Elements */
+
 .navbar-container {
   background-color: var(--navbar-background);
   color: var(--navbar-text-colour);
 }
 
 .navbar-brand {
-
+  color: var(--navbar-brand-color);
 }
 
 .navbar-menu {

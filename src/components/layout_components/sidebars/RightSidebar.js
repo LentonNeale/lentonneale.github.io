@@ -6,7 +6,7 @@ const RightColumn = () => {
   const  {theme}  = useTheme();
   return(
   <aside className='right-sidebar' data-theme={theme}> 
-    <h1> Right SideBar </h1>
+    <h1 className='h1-sidebar'> Right SideBar </h1>
   </aside>
   );
 };
