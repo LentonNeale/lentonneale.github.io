@@ -1,0 +1,8 @@
+.scrollable-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollable-page{
+    flex-grow: 1;
+}

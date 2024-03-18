@@ -59,14 +59,16 @@
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 10000px;
   color: var(--text-color);
+  overflow: hidden;
 }
 
 .app-content {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .content-title {
@@ -194,4 +196,10 @@ h2 {
 
   }
 
+}
+
+/* Side bar CSS colors */
+
+.sidebar-button{
+  color: #0000001f;
 }
