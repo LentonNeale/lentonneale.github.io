@@ -8,16 +8,24 @@
     margin-left: 5%;
     margin-right: 5%;
     font-size: 2em;
+    white-space: nowrap;
+    inline-size: min-content;
 }
 
+.right-sidebar,
 .left-sidebar{
-    /* background-color: var(--background-color); */
     display: flex;
     flex-direction: column;
 }
-/* 
-.right-sidebar{
-    background-color: var(--background-color);
-} */
+
+.left-sidebar-container{
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+}
+
+.right-sidebar-container{
+padding-left: 1rem;
+padding-right: 1.5rem;
+}
 
 
