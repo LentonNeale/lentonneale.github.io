@@ -6,15 +6,17 @@
   }
   
   .navbar-brand {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: 200;
   }
   
+
   .navbar-menu {
-    display: flex; /* Always display the menu */
+    display: flex;
   }
   
   .navbar-menu.show-menu {
-    display: block; /* Hide the menu when showDropDown state is false */
+    display: block;
   }
   
   .nav-elements {
@@ -57,9 +59,9 @@
   .navbar-toggler{
     display: flex;
     flex-direction: column;
-    border-radius: 3px; /* Rounded corners */
-    padding: 5px; /* Padding inside the box */
-    margin: 2px; /* Margin around the box */
+    border-radius: 3px; 
+    padding: 5px;
+    margin: 2px;
   }
   .navbar-toggler-icon{
 
@@ -77,7 +79,7 @@
 }
 
     .navbar-menu.show-menu {
-      display: block; /* Show the menu when showDropDown state is true */
+      display: block; 
     }
   
     .nav-item.dropdown {

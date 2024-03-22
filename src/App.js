@@ -5,6 +5,8 @@ import Navbar from './components/layout_components/navigation/NavBar';
 import Footer from './components/layout_components/footer/Footer';
 import MainBody from './components/layout_components/mainbody/MainBody';
 import { ThemeProvider, useTheme } from './components/theme/ThemeContext'; 
+
+
 import './App.css';
 
 

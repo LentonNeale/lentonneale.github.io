@@ -1,0 +1,11 @@
+.scrollable-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.scrollable-page{
+    height: 1000px;
+    border: 2px solid red;
+}

@@ -11,7 +11,7 @@ import Home from '../../home/Home';
 import PageNotFound from '../../PageNotFound';
 
 // Theme Hook
-import { useTheme } from  '../../theme/ThemeContext';
+import { useTheme } from '../../theme/ThemeContext';
 
 // CSS import
 import './MainBody.css'; // Importing CSS for styling the main body component.
@@ -23,18 +23,18 @@ const getDynamicLinks = (pathname) => {
     '/about': AboutMe.dynamicLinks,
     '/MyCV': CV.dynamicLinks,
     '/MyProjects': MyProjects.dynamicLinks,
-  }; 
-  return pathToLinksMapping['/'+pathname] || []; // Returns an array of dynamic links based on current path, or an empty array if no match.
+  };
+  return pathToLinksMapping['/' + pathname] || []; // Returns an array of dynamic links based on current path, or an empty array if no match.
 };
 
 const MainBody = () => {
   const [dynamicLinks, setDynamicLinks] = useState([]); // Holds the dynamic links for the sidebar, initially empty.
-  const {'*': pathname} = useParams(); // Using / to capture all path segments for flexible matching.
-  const {theme} = useTheme();
+  const { '*': pathname } = useParams(); // Using / to capture all path segments for flexible matching.
+  const { theme } = useTheme();
 
   // Updates dynamicLinks state based on current pathname.
   useEffect(() => {
-    setDynamicLinks(getDynamicLinks(pathname)); 
+    setDynamicLinks(getDynamicLinks(pathname));
   }, [pathname]);
 
   return (
@@ -43,11 +43,12 @@ const MainBody = () => {
       <LeftSidebar dynamicLinks={dynamicLinks} />
       <div className='main-content' data-theme={theme}>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<AboutMe />} />
           <Route path="/MyCV" element={<CV />} /> {/* Ensure this matches the dynamic link logic */}
           <Route path="/MyProjects" element={<MyProjects />} />
-          <Route path= "*" element={<PageNotFound /> } />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
       <RightSidebar />

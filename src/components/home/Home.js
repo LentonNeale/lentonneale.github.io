@@ -3,14 +3,12 @@ import { useTheme } from '../theme/ThemeContext';
 import MyProjects from '../myprojects/MyProjects';
 import AboutMe from '../about/AboutMe';
 import CV from '../myCV/CV';
-
+import './home.css'
 
 const Home = () => {
   const { theme } = useTheme();
   return (
-    <div> 
-
-
+    <div className='scrollable-container'>
       <div className='scrollable-page'>
         <li className='content-title' data-theme={theme}>
           <h2>Home</h2>
@@ -23,7 +21,7 @@ const Home = () => {
 
         </div>
       </div>
-      
+
       <div className='scrollable-page'>
         {<AboutMe />}
       </div>
