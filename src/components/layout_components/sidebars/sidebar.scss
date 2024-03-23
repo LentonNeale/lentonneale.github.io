@@ -10,23 +10,24 @@
     font-size: 2em;
     white-space: nowrap;
     inline-size: min-content;
-}
-
-.right-sidebar,
-.left-sidebar{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.left-sidebar-container{
     padding-left: 1.5rem;
     padding-right: 1rem;
 }
 
-.right-sidebar-container{
-padding-left: 1rem;
-padding-right: 1.5rem;
+
+.sidebar{
+    width: 250px;
+    transition: width 1s ease; /* Add transition for width */
+    height: 100vh;
 }
+
+// .left-sidebar-container{
+
+// }
+
+// .right-sidebar-container{
+// padding-left: 1rem;
+// padding-right: 1.5rem;
+// }
 
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, useParams } from 'react-router-dom';
 
+
 // Component Imports
 import LeftSidebar from '../sidebars/LeftSidebar';
 import RightSidebar from '../sidebars/RightSidebar';
@@ -14,7 +15,7 @@ import PageNotFound from '../../PageNotFound';
 import { useTheme } from '../../theme/ThemeContext';
 
 // CSS import
-import './MainBody.css'; // Importing CSS for styling the main body component.
+import './MainBody.scss'; // Importing CSS for styling the main body component.
 
 // A utility function defined to map the current pathname to a set of dynamic links. This helps in determining the content of the sidebar based on the current route.
 const getDynamicLinks = (pathname) => {
@@ -41,7 +42,7 @@ const MainBody = () => {
     // Fragment used to group the layout components without adding extra nodes to the DOM.
     <>
       <LeftSidebar dynamicLinks={dynamicLinks} />
-      <div className='main-content' data-theme={theme}>
+      <div className={`main-content flex-column ${theme === 'light' ? 'bg-light' : 'bg-dark'}`} data-bs-theme={theme}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

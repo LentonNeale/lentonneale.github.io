@@ -18,6 +18,7 @@
   --dropdown-bg-hover: #f8f9fa00;
   /* Light background on hover for dropdown items, light theme */
   --background-color-main_window: #4843d5;
+  // --background-color-header: aqua-gradient color-block mb-3 mx-auto rounded-circle z-depth-1;
   --background-color-right_sidebar: #04dce062;
   --background-color-left_sidebar: #ffb8056b;
   --navbar-background: #5f848483;
@@ -46,11 +47,9 @@
   --navbar-toggler-icon-color: #00000074;
   --navbar-box-shadow: #ffffff;
   --navbar-text-colour: #525af3;
-  --navbar-active-text-colour: #0c18f6;
+  --navbar-active-text-colour: #fbfbfb;
   --navbar-brand-color: #fefefe;
 }
-
-
 
 
 
@@ -60,6 +59,8 @@
   display: flex;
   flex-direction: column;
   color: var(--text-color);
+  width: auto;
+  overflow-x: hidden;
 }
 
 .app-content {
@@ -69,17 +70,17 @@
 }
 
 .content-title {
-  background-color: var(--background-color-main_window);
-  color: var(--text-color);
+  // background-color: var(--background-color-main_window);
+  // color: var(--text-color);
 }
 
 .content-body {
-  background-color: var(--background-color-main_window);
-  color: var(--text-color);
+  // background-color: var(--background-color-main_window);
+  // color: var(--text-color);
 }
 
 .main-content {
-  background-color: var(--background-color-main_window);
+  // background-color: var(--background-color-main_window);
 
 }
 
@@ -148,8 +149,8 @@ h2 {
 .dropdown-item {}
 
 .navbar-toggler {
-  background-color: var(--navbar-toggler-icon-color);
-  box-shadow: 2px 2px 4px var(--navbar-box-shadow);
+  // background-color: var(--navbar-toggler-icon-color);
+  // box-shadow: 2px 2px 4px var(--navbar-box-shadow);
 }
 
 .navbar-toggler-icon {}

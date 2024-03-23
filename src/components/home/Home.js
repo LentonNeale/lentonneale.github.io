@@ -3,7 +3,7 @@ import { useTheme } from '../theme/ThemeContext';
 import MyProjects from '../myprojects/MyProjects';
 import AboutMe from '../about/AboutMe';
 import CV from '../myCV/CV';
-import './home.css'
+import './home.scss'
 
 const Home = () => {
   const { theme } = useTheme();

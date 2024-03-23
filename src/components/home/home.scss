@@ -5,7 +5,10 @@
     overflow-y: scroll;
 }
 
+.scrollable-container::-webkit-scrollbar {
+    display: none;
+}
+
 .scrollable-page{
-    height: 1000px;
-    border: 2px solid red;
+    // border: 2px solid red;
 }

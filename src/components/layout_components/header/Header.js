@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from  '../../theme/ThemeContext';
-import '../CommonStyles/H_and_F.css';
+import '../CommonStyles/H_and_F.scss';
 
 const Header = () => {
   // Use useContext hook to consume the theme context

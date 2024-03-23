@@ -4,11 +4,8 @@ import Header from './components/layout_components/header/Header';
 import Navbar from './components/layout_components/navigation/NavBar';
 import Footer from './components/layout_components/footer/Footer';
 import MainBody from './components/layout_components/mainbody/MainBody';
-import { ThemeProvider, useTheme } from './components/theme/ThemeContext'; 
-
-
-import './App.css';
-
+import { ThemeProvider, useTheme } from './components/theme/ThemeContext';
+import './App.scss';
 
 
 function App() {
@@ -19,11 +16,11 @@ function App() {
         <div className="App">
           <Header />
           <Navbar />
-            <div className='app-content'>
-              <Routes>
-                <Route path="*" element={<MainBody />} />
-              </Routes>
-            </div>
+          <div className='app-content'>
+            <Routes>
+              <Route path="*" element={<MainBody />} />
+            </Routes>
+          </div>
           <Footer />
         </div>
       </ThemeHandler>
