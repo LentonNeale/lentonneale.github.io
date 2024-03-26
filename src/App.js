@@ -1,25 +1,36 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/layout_components/header/Header';
-import Navbar from './components/layout_components/navigation/NavBar';
-import Footer from './components/layout_components/footer/Footer';
-import MainBody from './components/layout_components/mainbody/MainBody';
-import { ThemeProvider, useTheme } from './components/theme/ThemeContext';
+
+
+// Custom Components
+import { ThemeProvider, useTheme } from './components/theme/ThemeProvider';
+import ThemeHandler from './components/theme/ThemeHandler';
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
+import Home from './components/pages/Home';
+
+// Style Sheets
 import './App.scss';
 
 
 function App() {
-  // Removed useTheme hook as using it here would cause a React Hook "useTheme" cannot be called in a class component error.
+  const { theme } = useTheme();
+
   return (
     <ThemeProvider>
       <ThemeHandler>
-        <div className="App">
+        <div className="App flex-column" data-bs-theme={theme}>
           <Header />
-          <Navbar />
-          <div className='app-content'>
-            <Routes>
-              <Route path="*" element={<MainBody />} />
-            </Routes>
+          <div>
+            <Router>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </Router>
           </div>
           <Footer />
         </div>
@@ -27,16 +38,5 @@ function App() {
     </ThemeProvider>
   );
 }
-
-// Component to handle setting data-theme based on the current theme
-const ThemeHandler = ({ children }) => {
-  const { theme } = useTheme(); // Correct usage of useTheme here
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  return <>{children}</>;
-};
 
 export default App;

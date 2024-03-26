@@ -1,181 +1,38 @@
-/* Global Variables */
-:root {
-  /* Default to light theme */
-  --text-color: #ffbf69;
-  /* Default to light theme */
-  --sidebar-bg-color: #0af0e079;
-  /* Default to light theme */
-  /* --header-footer-bg-color: #2ec4b6; */
-  /* Common for both themes */
-  --navbar-brand-color: #007bff;
-  /* Bootstrap blue, common for both themes */
-  --navbar-brand-hover-color: #0056b3;
-  /* Darker shade for hover state, common for both themes */
-  --link-color: #007bff;
-  /* Link color, common for both themes */
-  --dropdown-item-color: #333;
-  /* Dropdown item text color, light theme */
-  --dropdown-bg-hover: #f8f9fa00;
-  /* Light background on hover for dropdown items, light theme */
-  --background-color-main_window: #4843d5;
-  // --background-color-header: aqua-gradient color-block mb-3 mx-auto rounded-circle z-depth-1;
-  --background-color-right_sidebar: #04dce062;
-  --background-color-left_sidebar: #ffb8056b;
-  --navbar-background: #5f848483;
-  /* --navbar-toggler-color: #49474709; */
-  --navbar-box-shadow: #000000;
-  --navbar-toggler-icon-color: #00000026;
-  --navbar-text-colour: #1a1c3d;
-  --navbar-active-text-colour: #131dcc;
-  --navbar-brand-color: #8f9295;
-}
-
-[data-theme="dark"] {
-  --text-color: #ffffff;
-  --sidebar-bg-color: #ffbf69;
-  /* --header-footer-bg-color: #4443435d; */
-  /* Common for both themes */
-  --dropdown-item-color: #ccc;
-  /* Lighter text color for dark theme dropdown items */
-  --dropdown-bg-hover: #2a2a2a;
-  /* Darker background on hover for dark theme */
-  --background-color-main_window: #060606;
-  --background-color-right_sidebar: #242424;
-  --background-color-left_sidebar: #242424;
-  --navbar-background: #687268b3;
-  --navbar-toggler-color: #fff5f5;
-  --navbar-toggler-icon-color: #00000074;
-  --navbar-box-shadow: #ffffff;
-  --navbar-text-colour: #525af3;
-  --navbar-active-text-colour: #fbfbfb;
-  --navbar-brand-color: #fefefe;
-}
-
-
-
-
-/* Layout Components */
 .App {
-  display: flex;
-  flex-direction: column;
-  color: var(--text-color);
-  width: auto;
-  overflow-x: hidden;
-}
-
-.app-content {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-}
-
-.content-title {
-  // background-color: var(--background-color-main_window);
-  // color: var(--text-color);
-}
-
-.content-body {
-  // background-color: var(--background-color-main_window);
-  // color: var(--text-color);
-}
-
-.main-content {
-  // background-color: var(--background-color-main_window);
-
-}
-
-.right-sidebar {
-  background-color: var(--background-color-right_sidebar);
-}
-
-.left-sidebar {
-  background-color: var(--background-color-left_sidebar);
-}
-
-/* Header footer */
-.header,
-.footer {
-  background-color: var(--background-color-main_window);
-  color: var(--text-color);
-}
-
-/* Typography */
-h1 {
-  font-family: "Taviraj", serif;
-  font-style: italic;
-  font-weight: 600;
   text-align: center;
 }
 
-h2 {
-  color: aqua;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-
-/* Navbar Elements */
-
-.navbar-container {
-  background-color: var(--navbar-background);
-  color: var(--navbar-text-colour);
-}
-
-.navbar-brand {
-  color: var(--navbar-brand-color);
-}
-.navbar-menu {}
-
-.navbar-menu.show-menu {}
-
-.nav-elements {}
-
-.navbar-toggler {}
-
-.nav-item {}
-
-.nav-link {
-  color: var(--navbar-text-colour);
-}
-
-.nav-link.active-link {
-  color: var(--navbar-active-text-colour);
-}
-
-.dropdown-menu {
-  background-color: #333;
-}
-
-.dropdown-menu.show {}
-
-.dropdown-item {}
-
-.navbar-toggler {
-  // background-color: var(--navbar-toggler-icon-color);
-  // box-shadow: 2px 2px 4px var(--navbar-box-shadow);
-}
-
-.navbar-toggler-icon {}
-
-
-.bar {
-  background-color: rgb(22, 22, 22);
-}
-
-@media (max-width: 960px) {
-  .navbar-menu {}
-
-  .navbar-menu.show-menu {
-
-    /* Show the menu when showDropDown state is true */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
-
-  .nav-item.dropdown {}
-
-  .dropdown-menu {}
-
 }
 
-/* Side bar CSS colors */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
-.sidebar-button {
-  color: #0000001f;
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
