@@ -23,6 +23,7 @@ export const ThemeProvider = ({ children }) => {
     const toggleTheme = () => {
         setTheme((currentTheme) => {
             const newTheme = currentTheme === THEME_LIGHT ? THEME_DARK : THEME_LIGHT;
+            console.log("Theme: "+newTheme);
             saveThemeToStorage(newTheme);
             return newTheme;
         });

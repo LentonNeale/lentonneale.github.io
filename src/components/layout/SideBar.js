@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { useTheme } from '../theme/ThemeProvider';
+
 
 const sidebarStyles = {
     links: {
@@ -14,7 +16,9 @@ const sidebarStyles = {
 
 const SideBar = ({ type, items, position }) => {
     const positionClass = position === 'left' ? 'start' : 'end';
-    const [isExpanded, setIsExpanded] = useState(true); // State to track expanded/collapsed state
+    const [isExpanded, setIsExpanded] = useState(false); // State to track expanded/collapsed state
+    const { theme } = useTheme();
+
 
     // Function to toggle the expanded/collapsed state
     const toggleSidebar = () => {
@@ -59,7 +63,7 @@ const SideBar = ({ type, items, position }) => {
     const style = sidebarStyles[type]
 
     return (
-<div className={`sidebar sidebar-${position}-${type}`} style={style}>
+<div className={`sidebar sidebar-${position}-${type} ${theme === 'light' ? "bg-light bg-gradient" : "bg-dark bg-gradient"}`} style={style}>
       {isExpanded ? (
         <>
         <div className={`d-flex justify-content-${ position === "left" ? "end":"start"}` }>

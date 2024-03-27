@@ -4,25 +4,27 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Custom Components
 import { ThemeProvider, useTheme } from './components/theme/ThemeProvider';
-import ThemeHandler from './components/theme/ThemeHandler';
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import Home from './components/pages/Home';
+import NavBar from './components/layout/NavBar';
 
 // Style Sheets
 import './App.scss';
 
 
 function App() {
-  const { theme } = useTheme();
+  const {theme} = useTheme();
+
+    // Verify if the theme and toggle function are accessible
 
   return (
     <ThemeProvider>
-      <ThemeHandler>
         <div className="App flex-column" data-bs-theme={theme}>
           <Header />
+          <NavBar />
           <div>
             <Router basename={process.env.PUBLIC_URL}>
               <Routes>
@@ -34,7 +36,6 @@ function App() {
           </div>
           <Footer />
         </div>
-      </ThemeHandler>
     </ThemeProvider>
   );
 }
