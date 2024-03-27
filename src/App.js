@@ -24,7 +24,7 @@ function App() {
         <div className="App flex-column" data-bs-theme={theme}>
           <Header />
           <div>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
