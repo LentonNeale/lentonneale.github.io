@@ -59,7 +59,7 @@ const SideBar = ({ type, items, position }) => {
         return items.map((progress, index) => (
           <div>
             <div>{progress.label}</div>
-            <div key={index} className="progress" style={{ width: '90%' }}>
+            <div key={index} className="progress" style={{ width: '120px' }}>
               <div className="progress-bar" role="progressbar" style={{ width: `${progress.value}%` }} aria-valuenow={progress.value} aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
