@@ -12,6 +12,10 @@ const sidebarStyles = {
 
 }
 
+const isExternalLink = (url) => {
+  return /^(https?:\/\/|mailto:|tel:)/.test(url);
+};
+
 
 
 const SideBar = ({ type, items, position }) => {
@@ -42,7 +46,13 @@ const SideBar = ({ type, items, position }) => {
       case 'links':
         return items.map((link, index) => (
           <li key={index} style={{ listStyle: 'none' }}>
-            <NavLink to={link.url}>{link.title}</NavLink>
+            {isExternalLink(link.url) ? (
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {link.title}
+              </a>
+            ) : (
+              <NavLink to={link.url}>{link.title}</NavLink>
+            )}
           </li>
         ));
       case 'progress':
@@ -54,12 +64,12 @@ const SideBar = ({ type, items, position }) => {
             </div>
           </div>
         ));
-        case 'info':
-          return items.map((info,index) => (
-            <li key={index} style={{ listStyle: 'none' }}>
+      case 'info':
+        return items.map((info, index) => (
+          <li key={index} style={{ listStyle: 'none' }}>
             <div>{info.description}: {info.text} </div>
           </li>
-          ));
+        ));
       default:
         return <div> <h3> SideBar </h3></div>
     }
