@@ -16,26 +16,28 @@ import './App.scss';
 
 
 function App() {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
 
-    // Verify if the theme and toggle function are accessible
+  // Verify if the theme and toggle function are accessible
 
   return (
     <ThemeProvider>
+      <Router>
         <div className="App flex-column" data-bs-theme={theme}>
           <Header />
           <NavBar />
           <div>
-            <Router basename={process.env.PUBLIC_URL}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </Router>
+
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+
           </div>
           <Footer />
         </div>
+      </Router>
     </ThemeProvider>
   );
 }

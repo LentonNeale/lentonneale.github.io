@@ -10,7 +10,7 @@ const BodyLayout = ({children,leftSideBarType,leftsidebarItems, rightSideBarType
             position='left' /> }
             <div className='flex-grow-1'>{children}</div>
             {rightSideBarType && <SideBar type = {rightSideBarType} 
-            item= {rightsidebarItems}
+            items = {rightsidebarItems}
             position='right' /> }
         </div>
     )

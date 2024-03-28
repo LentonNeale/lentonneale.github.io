@@ -3,7 +3,13 @@ import BodyLayout from "../layout/BodyLayout";
 
 const Contact = () => {
     return (
-        <BodyLayout sideBarType ="links" sidebarPosition="dual-sidebar">
+        <BodyLayout 
+        leftSideBarType = "info"
+        leftsidebarItems = {[
+            {description: 'Email', text: 'lentonneale@gmail.com'},
+            {description: 'Mobile', text: '0221665951'}
+        ]}
+        >
             <div>
                 <h1> Contact Page </h1>
             </div>
