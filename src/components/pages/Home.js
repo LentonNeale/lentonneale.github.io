@@ -7,9 +7,9 @@ const Home = () => {
         <BodyLayout
             leftSideBarType="links"
             leftsidebarItems={[
-                { title: 'Home', url: '/' },
-                { title: 'About', url: '/about' },
-                { title: 'Website Git Repo', url: 'https://github.com/LentonNeale/lentonneale.github.io' },
+                { label: 'Home', url: '/' },
+                { label: 'About', url: '/about' },
+                { label: 'Website Git Repo', url: 'https://github.com/LentonNeale/lentonneale.github.io' },
 
             ]}
             rightSideBarType="progress"

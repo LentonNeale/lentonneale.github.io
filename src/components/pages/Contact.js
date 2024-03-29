@@ -7,7 +7,8 @@ const Contact = () => {
         leftSideBarType = "info"
         leftsidebarItems = {[
             {description: 'Email', text: 'lentonneale@gmail.com'},
-            {description: 'Mobile', text: '0221665951'}
+            {description: 'LinkedIn', text: 'https://www.linkedin.com/in/lenton-neale-726253123/'},
+            {description: 'Other', text: 'Other Info'}
         ]}
         >
             <div>

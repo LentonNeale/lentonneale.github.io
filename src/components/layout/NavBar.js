@@ -10,7 +10,7 @@ const NavBar = () => {
 
 
     return (
-        <div className={`navbar navbar-expand-lg ${theme === 'light' ? "navbar-light bg-light" : "navbar-dark bg-dark"}`}>
+        <div className={`navbar navbar-expand-lg ${theme === 'light' ? "navbar-light" : "navbar-dark bg-dark"}`} style={theme === 'light' ? { backgroundColor: '#e3f2fd' } : {}}>
             <div className="container-fluid">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">

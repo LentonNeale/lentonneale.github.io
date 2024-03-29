@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTheme } from '../theme/ThemeProvider';
 import { NavLink } from "react-router-dom";
+import { Envelope, Linkedin } from "react-bootstrap-icons"
 
 const sidebarStyles = {
   links: {
@@ -9,17 +10,21 @@ const sidebarStyles = {
   progress: {
     backgroundColor: '#e0e0e0',
   }
-
 }
 
 const isExternalLink = (url) => {
-  return /^(https?:\/\/|mailto:|tel:)/.test(url);
+  return /^https:\/\//.test(url);
 };
 
 
 
+function isEmail(text) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(text);
+}
+
 const SideBar = ({ type, items, position }) => {
-  const positionClass = position === 'left' ? 'start' : 'end';
+  // const positionClass = position === 'left' ? 'start' : 'end';
   const [isExpanded, setIsExpanded] = useState(true); // State to track expanded/collapsed state
   const { theme } = useTheme();
 
@@ -34,13 +39,6 @@ const SideBar = ({ type, items, position }) => {
     setIsExpanded(true);
   };
 
-  // Function to handle collapsing the sidebar
-  const collapseSidebar = () => {
-    setIsExpanded(false);
-  };
-
-
-
   const sidebarContent = (items) => {
     switch (type) {
       case 'links':
@@ -48,10 +46,10 @@ const SideBar = ({ type, items, position }) => {
           <li key={index} style={{ listStyle: 'none' }}>
             {isExternalLink(link.url) ? (
               <a href={link.url} target="_blank" rel="noopener noreferrer">
-                {link.title}
+                {link.label}
               </a>
             ) : (
-              <NavLink to={link.url}>{link.title}</NavLink>
+              <NavLink to={link.url}>{link.label}</NavLink>
             )}
           </li>
         ));
@@ -67,7 +65,20 @@ const SideBar = ({ type, items, position }) => {
       case 'info':
         return items.map((info, index) => (
           <li key={index} style={{ listStyle: 'none' }}>
-            <div>{info.description}: {info.text} </div>
+            {info.description === 'Email' ? (
+              <div>
+                <div> Email Me: </div>
+                <a href={`mailto:${info.text}`}>
+                  <Envelope />
+                </a>
+              </div>
+            ) : info.description === 'LinkedIn' ? (
+              <a href={info.text} target="_blank" rel="noopener noreferrer">
+                <Linkedin />
+              </a>
+            ) : (
+              <div>{info.description}: {info.text}</div>
+            )}
           </li>
         ));
       default:
@@ -95,7 +106,8 @@ const SideBar = ({ type, items, position }) => {
               {position === "left" ? "<<" : ">>"}
             </button>
           </div>
-          <div className="d-flex flex-column align-items-center">
+
+          <div className="d-flex flex-column align-items-center" >
             {sidebarContent(items)}
           </div>
         </>
