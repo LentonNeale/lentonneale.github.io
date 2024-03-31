@@ -1,10 +1,13 @@
 import React from 'react';
 import SideBar from './SideBar';
+import { useTheme } from '../theme/ThemeProvider';
+
+import './BodyLayout.scss'
 
 const BodyLayout = ({children,leftSideBarType,leftsidebarItems, rightSideBarType, rightsidebarItems}) => {
-
+    const { theme } = useTheme();
     return (
-        <div className='d-flex flex-row' style={{height: '100vh'}}>
+        <div className={`main-${theme} d-flex flex-row`}  style={{height: '100vh'}}>
             {leftSideBarType && <SideBar type = {leftSideBarType} 
             items = {leftsidebarItems}
             position='left' /> }

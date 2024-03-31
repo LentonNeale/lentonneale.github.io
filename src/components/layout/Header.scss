@@ -1,0 +1,13 @@
+@import '../../App.scss';
+
+.header-light{
+    background-color: $light-background;
+    max-width: 110vw;
+    overflow: hidden;
+}
+
+
+.header-dark{
+    background-color: $dark-background;
+    overflow: hidden;
+}

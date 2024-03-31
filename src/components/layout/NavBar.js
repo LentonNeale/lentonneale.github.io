@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from '../theme/ThemeProvider';
 import { NavLink } from "react-router-dom";
 import { MoonFill, SunFill } from "react-bootstrap-icons"
-
+import './NavBar.scss'
 
 const NavBar = () => {
     const { theme, toggleTheme } = useTheme();
@@ -10,8 +10,9 @@ const NavBar = () => {
 
 
     return (
-        <div className={`navbar navbar-expand-lg ${theme === 'light' ? "navbar-light" : "navbar-dark bg-dark"}`} style={theme === 'light' ? { backgroundColor: '#e3f2fd' } : {}}>
+        <div className={`navbar navbar-expand-lg navbar-${theme}`}>
             <div className="container-fluid">
+                <div className={`navbar-brand-${theme}`}> Portfolio </div>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/">Home</NavLink>
@@ -24,7 +25,7 @@ const NavBar = () => {
                     </li>
                 </ul>
                 <button className={`btn btn-transparent`} onClick={toggleTheme}>
-                {theme === 'light' ? <MoonFill color="yellow" /> : <SunFill color="yellow" />}
+                {theme === 'light' ? <MoonFill color="black" /> : <SunFill color="yellow" />}
                 </button>
             </div>
         </div>

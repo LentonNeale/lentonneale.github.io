@@ -9,6 +9,7 @@ const Home = () => {
             leftsidebarItems={[
                 { label: 'Home', url: '/' },
                 { label: 'About', url: '/about' },
+                { label: 'Contact', url: '/contact' },
                 { label: 'Website Git Repo', url: 'https://github.com/LentonNeale/lentonneale.github.io' },
 
             ]}

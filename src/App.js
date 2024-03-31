@@ -23,7 +23,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="App flex-column" data-bs-theme={theme}>
+        <div className={`App flex-column ${theme}-theme`}>
           <Header />
           <NavBar />
           <div>

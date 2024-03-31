@@ -3,14 +3,7 @@ import { useTheme } from '../theme/ThemeProvider';
 import { NavLink } from "react-router-dom";
 import { Envelope, Linkedin } from "react-bootstrap-icons"
 
-const sidebarStyles = {
-  links: {
-    backgroundColor: '#f0f0f0',
-  },
-  progress: {
-    backgroundColor: '#e0e0e0',
-  }
-}
+import './SideBar.scss'
 
 const isExternalLink = (url) => {
   return /^https:\/\//.test(url);
@@ -45,11 +38,11 @@ const SideBar = ({ type, items, position }) => {
         return items.map((link, index) => (
           <li key={index} style={{ listStyle: 'none' }}>
             {isExternalLink(link.url) ? (
-              <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <a className={`sidebar-link-${theme}`} href={link.url} target="_blank" rel="noopener noreferrer">
                 {link.label}
               </a>
             ) : (
-              <NavLink to={link.url}>{link.label}</NavLink>
+              <NavLink className={`sidebar-link-${theme}`} to={link.url}>{link.label}</NavLink>
             )}
           </li>
         ));
@@ -88,16 +81,15 @@ const SideBar = ({ type, items, position }) => {
 
 
 
-  const style = sidebarStyles[type]
 
   return (
-    <div className={`sidebar sidebar-${position}-${type} ${theme === 'light' ? "bg-light bg-gradient" : "bg-dark bg-gradient"}`} style={style}>
+    <div className={`sidebar-${isExpanded ? "" : "collapsed-" }${theme}`}>
       {isExpanded ? (
         <>
           <div className={`d-flex justify-content-${position === "left" ? "end" : "start"}`} style={{ width: '200px' }} >
             <button
               onClick={toggleSidebar}
-              className="expand-button"
+              className={`expanded-button-${theme}`}
               style={{
                 position: "relative",
                 zIndex: 999,
@@ -112,19 +104,19 @@ const SideBar = ({ type, items, position }) => {
           </div>
         </>
       ) : (
-        <button
-          onClick={expandSidebar}
-          className="expand-button"
-          style={{
-            position: "relative",
-            top: "10px",
-            right: position === "left" ? "0" : "auto",
-            left: position === "right" ? "0" : "auto",
-            zIndex: 999,
-          }}
-        >
-          {position === "left" ? ">" : "<"}
-        </button>
+          <button
+            onClick={expandSidebar}
+            className={`expand-button-${theme}`}
+            style={{
+              position: "relative",
+              top: "10px",
+              right: position === "left" ? "0" : "auto",
+              left: position === "right" ? "0" : "auto",
+              zIndex: 999,
+            }}
+          >
+            {position === "left" ? ">" : "<"}
+          </button>
       )}
     </div>
   )

@@ -1,0 +1,16 @@
+@import '../../App.scss';
+
+
+.main-dark {
+    background-color: $dark-background;
+    /* Adjust as needed */
+    color: $dark-text;
+    /* Adjust as needed */
+}
+
+.main-light {
+    background-color: $light-background;
+    /* Adjust as needed */
+    color: $light-text;
+    /* Adjust as needed */
+}

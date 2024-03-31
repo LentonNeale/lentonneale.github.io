@@ -1,0 +1,33 @@
+@import '../../App.scss';
+
+.navbar-light {
+    // background-color: $light-sidebar;
+    background: hsla(217, 100%, 50%, 1);
+    //background: linear-gradient(180deg, hsla(217, 100%, 50%, 1) 0%,rgb(0, 255, 4) 0%, hsla(186, 100%, 69%, 1) 100%);
+    background: linear-gradient(180deg, rgb(87, 88, 89) 0%,rgb(255, 255, 255) 20%,rgb(255, 255, 255) 80%, rgb(87, 88, 89) 100%);
+
+}
+.navbar-dark {
+    // background-color: $light-sidebar;
+    background: hsla(217, 100%, 50%, 1);
+    background: linear-gradient(180deg, rgb(87, 88, 89) 0%,rgb(6, 6, 6) 20%,rgb(6, 6, 6) 80%, rgb(87, 88, 89) 100%);
+}
+
+
+.navbar-dark {
+    background-color: $dark-sidebar;
+}
+
+.navbar-brand-dark,
+.navbar-brand-light{
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.navbar-brand-light{
+    color: $light-heading;
+}
+
+.navbar-brand-dark{
+    color: $dark-heading;
+}

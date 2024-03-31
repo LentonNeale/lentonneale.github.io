@@ -1,0 +1,72 @@
+@import '../../App.scss';
+
+
+.sidebar-dark {
+    background-color: $dark-sidebar;
+    color: $dark-text;
+
+}
+
+.sidebar-light {
+    background-color: $light-sidebar;
+    color: $light-text;
+
+}
+
+.sidebar-collapsed-dark {
+    background-color: $dark-background;
+
+    color: $dark-text;
+
+}
+
+.sidebar-collapsed-light {
+    background-color: $light-background;
+
+    color: $light-text;
+
+}
+
+.expand-button-dark{
+    background: $dark-active-links;
+    color: $dark-heading;
+}
+
+.expanded-button-dark{
+    background: $dark-sidebar;
+    color: $dark-heading;
+    border: none;
+    box-shadow: none;
+}
+
+.expand-button-light{
+    background: $light-active-links;
+    color: $light-links;
+}
+
+.expanded-button-light{
+    background: $light-sidebar;
+    color: $light-links;
+    border: none;
+    box-shadow: none;
+}
+
+.sidebar-link-light{
+    text-decoration: none;
+    color: $light-links;
+}
+
+.sidebar-link-light:hover{
+    text-decoration: none;
+    color: $light-active-links;
+}
+
+.sidebar-link-dark{
+    text-decoration: none;
+    color: $dark-links;
+}
+
+.sidebar-link-dark:hover{
+    text-decoration: none;
+    color: $dark-active-links;
+}
