@@ -60,7 +60,7 @@ const SideBar = ({ type, items, position }) => {
           <li key={index} style={{ listStyle: 'none' }}>
             {info.description === 'Email' ? (
               <div>
-                <div> Email Me: </div>
+                <div> Contact Me: </div>
                 <a href={`mailto:${info.text}`}>
                   <Envelope />
                 </a>
@@ -110,8 +110,10 @@ const SideBar = ({ type, items, position }) => {
             style={{
               position: "relative",
               top: "10px",
-              right: position === "left" ? "0" : "auto",
-              left: position === "right" ? "0" : "auto",
+              marginLeft: position === "left" ? "-3px" : "",
+              marginRight: position === "right" ? "-3px" : "",
+              // right: position === "left" ? "5" : "auto",
+              // left: position === "right" ? "-5" : "auto",
               zIndex: 999,
             }}
           >

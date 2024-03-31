@@ -1,7 +1,7 @@
 @import '../../App.scss';
 
 .header-light{
-    background-color: $light-background;
+    background-color: green;
     max-width: 110vw;
     overflow: hidden;
 }
@@ -10,4 +10,12 @@
 .header-dark{
     background-color: $dark-background;
     overflow: hidden;
+}
+
+.img-light{
+    opacity: 0.6;
+}
+
+.img-dark{
+    opacity: 0.6;
 }

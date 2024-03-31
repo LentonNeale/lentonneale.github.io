@@ -1,8 +1,9 @@
 import React from "react";
 import BodyLayout from "../layout/BodyLayout";
+import TextFileReader from "../util-components/TextFileReader";
+
 
 const Home = () => {
-    console.log("Home");
     return (
         <BodyLayout
             leftSideBarType="links"
@@ -15,9 +16,9 @@ const Home = () => {
             ]}
             rightSideBarType="progress"
             rightsidebarItems={[
-                { label: 'Profile Completion', value: 25 },
-                { label: 'React', value: 20 },
-                { label: 'Bootstrap5', value: 5 },
+                { label: 'Profile Completion', value: 30 },
+                { label: 'React', value: 22 },
+                { label: 'Bootstrap5', value: 10 },
                 { label: 'Python', value: 40 },
                 { label: 'C', value: 30 },
                 { label: 'C++', value: 35 },
@@ -32,7 +33,7 @@ const Home = () => {
         >
             <div>
                 <h1> Home Page </h1>
-
+                {/* <TextFileReader fileName="home-page-text.txt" /> */}
 
             </div>
         </BodyLayout>

@@ -5,12 +5,20 @@
     background-color: $dark-background;
     /* Adjust as needed */
     color: $dark-text;
-    /* Adjust as needed */
+    overflow: hidden;
 }
 
 .main-light {
     background-color: $light-background;
     /* Adjust as needed */
     color: $light-text;
-    /* Adjust as needed */
+    overflow: hidden;
+}
+
+h1{
+    margin-top: 20px;
+    font-size: 4rem;
+    font-family: "Taviraj", serif;
+    font-weight: 700;
+    font-style: normal;
 }

@@ -27,29 +27,31 @@
 
 }
 
-.expand-button-dark{
-    background: $dark-active-links;
-    color: $dark-heading;
-}
-
-.expanded-button-dark{
-    background: $dark-sidebar;
-    color: $dark-heading;
+@mixin button-styles($background, $color) {
+    background: $background;
+    color: $color;
     border: none;
     box-shadow: none;
 }
 
-.expand-button-light{
-    background: $light-active-links;
-    color: $light-links;
+.expand-button-dark {
+    @include button-styles($dark-active-links, $dark-heading);
+    border-radius: 5px; // Removed quotes from 5px
 }
 
-.expanded-button-light{
-    background: $light-sidebar;
-    color: $light-links;
-    border: none;
-    box-shadow: none;
+.expanded-button-dark {
+    @include button-styles($dark-sidebar, $dark-heading);
 }
+
+.expand-button-light {
+    @include button-styles($light-active-links, $light-links);
+    border-radius: 5px;
+}
+
+.expanded-button-light {
+    @include button-styles($light-sidebar, $light-links);
+}
+
 
 .sidebar-link-light{
     text-decoration: none;
