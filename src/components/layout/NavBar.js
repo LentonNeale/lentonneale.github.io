@@ -10,10 +10,10 @@ const NavBar = () => {
 
 
     return (
-        <div className={`navbar navbar-expand-lg navbar-${theme}`}>
+        <div className={`navbar navbar-expand-lg  navbar-${theme}`}>
             <div className="container-fluid">
-                <div className={`navbar-brand-${theme} mx-10 mb-5 mb-lg-0`}> Portfolio </div>
-                <ul className="navbar-nav mx-5 me-auto mb-3 mb-lg-0">
+                <div className={`navbar-brand-${theme} mx-10 mb-5 mb-lg-0`}> Lenton's Portfolio </div>
+                <ul className="navbar-nav  mx-5 me-auto mb-3 mb-lg-0">
                     <li className="nav-item mx-2">
                         <NavLink className="nav-link mb-2 mb-lg-0" to="/">Home</NavLink>
                     </li>

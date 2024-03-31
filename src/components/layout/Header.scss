@@ -3,12 +3,15 @@
 .header-light{
     background-color: green;
     max-width: 110vw;
+    min-width: 100vw;
     overflow: hidden;
 }
 
 
 .header-dark{
     background-color: $dark-background;
+    max-width: 110vw;
+    min-width: 100vw;
     overflow: hidden;
 }
 
