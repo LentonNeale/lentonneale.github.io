@@ -1,0 +1,11 @@
+Since childhood, my curiosity has led me to explore the inner workings of various objects. I began by disassembling toys and household items, gradually progressing to constructing structures with Lego and Mechano sets. At the age of ten, I was introduced to visual programming through the Lego Mindstorms platform, which later proved beneficial when I delved into Python and Object-oriented programming.
+
+Around this time, I developed an interest in Electronics and Electrical circuits, thanks to a "Funway into Electronics Volume 1" kit gifted by Dicksmiths. Following its guidance, I advanced from basic continuity indicators to assembling a Crystal AM radio, sparking a fascination with electronic tinkering.
+
+During college, my focus shifted towards mechanics, inspired by movies like The Fast and the Furious. This newfound interest prompted me to explore automotive mechanics and stereo systems. While my enthusiasm for fast cars eventually waned, my passion for designing and installing car stereos remained steadfast.
+
+Despite dabbling in software programming during college, I found myself struggling with complexity beyond basic HTML. This led me to explore other interests and hobbies. Dissatisfied with traditional academia, I pursued a Mechanical Engineering course at Weltec while working at Dicksmiths.
+
+Though I gained valuable skills in machining, welding, and CAD-based design during my engineering studies, the allure of software development persisted. After a brief period balancing work at Dicksmiths and an unpaid internship at a mechanics workshop, the demands of my schedule led me back to full-time employment at Dicksmiths.
+
+It wasn't until a relative introduced me to the Python programming language that my interest in software development resurfaced. Eager to explore further, I turned to online resources like "How to Learn Python the Hard Way" by Zed A Shaw. With newfound knowledge, I embarked on the task of creating a quoting software for my parents' printing business. Through dedication and perseverance, I developed a simple terminal-based program, marking the beginning of my journey into software development.
