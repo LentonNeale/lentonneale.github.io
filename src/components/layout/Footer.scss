@@ -1,0 +1,25 @@
+@import '../../App.scss';
+
+.footer-light{
+    background-color: green;
+    max-width: 110vw;
+    min-width: 100vw;
+    overflow: hidden;
+}
+
+
+.footer-dark{
+    background-color: $dark-background;
+    max-width: 110vw;
+    min-width: 100vw;
+    overflow: hidden;
+}
+
+.footer-text-light{
+    color: $light-text;
+}
+
+
+.footer-text-dark{
+    color: $dark-text;
+}

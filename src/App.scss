@@ -1,18 +1,21 @@
+@import '~bootstrap/scss/bootstrap';
+
 // Variables for Light Theme
 $light-background: #fefefe;
 $light-text: #121414;
 $light-sidebar: #b8a1a6;
 $light-links: #15424b;
 $light-active-links: #00b5e0;
-$light-heading: #dc2a26;
+$light-heading: #e66262;
 
 // Variables for Dark Theme
 $dark-background: #171414;
-$dark-text: #50886d;
+$dark-text: #a3b9ae;
 $dark-sidebar: #211e1e;
 $dark-links: #00e5e8;
 $dark-active-links: #1d45a2;
-$dark-heading: #f8d103;
+$dark-heading: #e66262;
+$dark-button-icon: #e66262;
 
 
 // Default Styles

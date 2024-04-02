@@ -1,24 +1,61 @@
 @import '../../App.scss';
 
-
-.main-dark {
-    background-color: $dark-background;
-    /* Adjust as needed */
-    color: $dark-text;
+.main {
     overflow: hidden;
+    &-dark {
+        background-color: $dark-background;
+        color: $dark-text;
+    }
+
+    &-light {
+        background-color: $light-background;
+        color: $light-text;
+    }
 }
 
-.main-light {
-    background-color: $light-background;
-    /* Adjust as needed */
-    color: $light-text;
-    overflow: hidden;
-}
-
-h1{
+.h1-light,
+.h1-dark {
     margin-top: 20px;
     font-size: 4rem;
     font-family: "Taviraj", serif;
     font-weight: 700;
     font-style: normal;
 }
+
+.h1-light {
+    color: $light-heading;
+}
+
+.h1-dark {
+    color: $dark-heading;
+}
+
+.p-dark {
+    text-align: left;
+    font-size: 1rem;
+    font-family: "Taviraj", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--dark-text);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+    height: 50px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.203);
+    border-radius: 10px;
+  }

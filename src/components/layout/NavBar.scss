@@ -9,8 +9,16 @@
 }
 .navbar-dark {
     // background-color: $light-sidebar;
-    background: hsla(217, 100%, 50%, 1);
-    background: linear-gradient(180deg, rgb(87, 88, 89) 0%,rgb(6, 6, 6) 20%,rgb(6, 6, 6) 80%, rgb(87, 88, 89) 100%);
+    // background: hsla(217, 100%, 50%, 1);
+    // background: linear-gradient(180deg, aqua 0%,rgb(6, 6, 6) 10%,rgb(6, 6, 6) 90%, aqua 100%),
+    // linear-gradient(90deg, aqua 0%,rgb(6, 6, 6) 5%,rgb(6, 6, 6) 95%, aqua 100%);
+    background:
+    linear-gradient(to top, aqua, rgba(0, 255, 255, 0.364) 3px, transparent 10px),
+    linear-gradient(to bottom, aqua, rgba(0, 255, 255, 0.555) 3px, transparent 10px),
+    linear-gradient(to right, aqua, rgba(0, 255, 255, 0.555) 2px, transparent 7px),
+    linear-gradient(to left, aqua, rgba(0, 255, 255, 0.555) 2px, transparent 7px);
+   
+    
 }
 
 

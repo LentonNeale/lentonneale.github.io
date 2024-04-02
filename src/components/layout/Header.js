@@ -8,7 +8,7 @@ import './Header.scss'
 const Header = () => {
   const { theme } = useTheme();
   return (
-    <header className={`header-${theme}`} style={{ height: '120px'}}>
+    <header className={`header-${theme}`} style={{ height: '10vh'}}>
       <img className={`img-${theme}`} src={`${theme === 'light' ? lightHeader:darkHeader}`} alt="Error" />
     </header>
   );

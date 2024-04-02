@@ -10,7 +10,7 @@ const saveThemeToStorage = (theme) => localStorage.setItem(THEME_STORAGE_KEY, th
 const getThemeFromStorage = () => localStorage.getItem(THEME_STORAGE_KEY);
 
 // Initialize theme based on localStorage or default to light theme
-const initializeTheme = () => getThemeFromStorage() || THEME_LIGHT;
+const initializeTheme = () => getThemeFromStorage() || THEME_DARK;
 
 const ThemeContext = createContext({
   theme: THEME_LIGHT,

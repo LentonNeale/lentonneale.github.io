@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-const TextFileReader = ({ fileName }) => {
+const TextFileReader = ({ file }) => {
     const [fileContent, setFileContent] = useState([]);
     useEffect(() => {
         const fetchFileContent = async () => {
             try {
-                const response = await fetch(`/assets/text-files/${fileName}`);
+                const response = await fetch(file);
                 if (!response.ok) {
                     throw new Error('Failed to fetch file');
                 }
@@ -20,12 +20,12 @@ const TextFileReader = ({ fileName }) => {
         };
 
         fetchFileContent();
-    }, [fileName]);
+    }, [file]);
 
     return (
         <>
             {fileContent.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p> // Render each paragraph as <p> element
+                <p className= "p-dark" key={index}>{paragraph}</p> // Render each paragraph as <p> element
             ))}
         </>
     );

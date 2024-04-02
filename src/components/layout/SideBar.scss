@@ -1,48 +1,72 @@
 @import '../../App.scss';
 
-
 .sidebar-dark {
     background-color: $dark-sidebar;
     color: $dark-text;
+}
 
+.sidebar-content {
+
+    width: 200px;
+    align-items: center;
 }
 
 .sidebar-light {
     background-color: $light-sidebar;
     color: $light-text;
 
+    .sidebar-content {
+        width: 200px;
+    }
 }
 
 .sidebar-collapsed-dark {
     background-color: $dark-background;
-
     color: $dark-text;
-
 }
 
 .sidebar-collapsed-light {
     background-color: $light-background;
-
     color: $light-text;
+}
 
+.sidebar-link-light,
+.sidebar-link-dark {
+    text-decoration: none;
+    list-style: none;
+}
+
+.sidebar-link-light {
+    color: $light-links;
+}
+
+.sidebar-link-dark {
+    color: $dark-links;
+}
+
+.sidebar-link-light:hover {
+    color: $light-active-links;
+}
+
+.sidebar-link-dark:hover {
+    color: $dark-active-links;
 }
 
 @mixin button-styles($background, $color) {
+    @extend .btn;
     background: $background;
     color: $color;
-    border: none;
-    box-shadow: none;
     padding-top: 0px;
     padding-bottom: 3px;
 }
 
 .expand-button-dark {
-    @include button-styles($dark-active-links, $dark-heading);
-    border-radius: 5px; // Removed quotes from 5px
+    @include button-styles($dark-active-links, $dark-button-icon);
+    border-radius: 5px;
 }
 
 .expanded-button-dark {
-    @include button-styles($dark-sidebar, $dark-heading);
+    @include button-styles($dark-sidebar, $dark-button-icon);
 }
 
 .expand-button-light {
@@ -54,23 +78,21 @@
     @include button-styles($light-sidebar, $light-links);
 }
 
-
-.sidebar-link-light{
-    text-decoration: none;
-    color: $light-links;
+.progress-bar-dark {
+    background-color: rgb(3, 253, 3);
 }
 
-.sidebar-link-light:hover{
-    text-decoration: none;
-    color: $light-active-links;
+.progress-bar-light {
+    background-color: rgb(236, 89, 106);
 }
 
-.sidebar-link-dark{
-    text-decoration: none;
-    color: $dark-links;
+.progress-dark,
+.progress-light {
+    @extend .progress;
+    background-color: #131212;
+    width: 120px;
 }
 
-.sidebar-link-dark:hover{
-    text-decoration: none;
-    color: $dark-active-links;
+li{
+    list-style: none;
 }

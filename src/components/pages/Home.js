@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import BodyLayout from "../layout/BodyLayout";
 import TextFileReader from "../util-components/TextFileReader";
-
+import { useTheme } from '../theme/ThemeProvider';
+import HomePageText from '../../assets/files/text_files/home-page-text.txt'
 
 const Home = () => {
+    const { theme } = useTheme();
+
     return (
         <BodyLayout
             leftSideBarType="links"
@@ -32,9 +35,8 @@ const Home = () => {
             ]}
         >
             <div>
-                <h1> Home Page </h1>
-                {/* <TextFileReader fileName="home-page-text.txt" /> */}
-
+                <h1 className={`h1-${theme}`}> Home Page </h1>
+                <TextFileReader file= {HomePageText} />
             </div>
         </BodyLayout>
     );

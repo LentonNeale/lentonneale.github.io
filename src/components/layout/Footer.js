@@ -1,11 +1,12 @@
 import React from 'react';
 import { useTheme } from '../theme/ThemeProvider';
+import './Footer.scss'
 
 const Footer = () => {
   const { theme } = useTheme();
   return (
-    <footer className={`footer-${theme}`} style={{ height: '100px', border: '1px solid var(--heading-color)' }}>
-    <p>© 2024 My Website. All rights reserved.</p>
+    <footer className={`footer-${theme}`} style={{ height: '5vh', border: '1px solid var(--heading-color)' }}>
+    <p className={`footer-text-${theme}`}>© 2024 My Website. All rights reserved.</p>
   </footer>
   );
   };
