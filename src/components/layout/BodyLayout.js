@@ -4,15 +4,15 @@ import { useTheme } from '../theme/ThemeProvider';
 
 import './BodyLayout.scss'
 
-const BodyLayout = ({children,leftSideBarType,leftsidebarItems, rightSideBarType, rightsidebarItems}) => {
+const BodyLayout = ({children,leftsidebarItems, rightsidebarItems}) => {
     const { theme } = useTheme();
     return (
         <div className={`main-${theme} d-flex flex-row`}  style={{height: '90vh'}}>
-            {leftSideBarType && <SideBar type = {leftSideBarType} 
+            {<SideBar 
             items = {leftsidebarItems}
             position='left' /> }
             <div className='flex-grow-1 overflow-auto'>{children}</div>
-            {rightSideBarType && <SideBar type = {rightSideBarType} 
+            {<SideBar
             items = {rightsidebarItems}
             position='right' /> }
         </div>

@@ -4,11 +4,10 @@ import BodyLayout from "../layout/BodyLayout";
 const Contact = () => {
     return (
         <BodyLayout 
-        leftSideBarType = "info"
         leftsidebarItems = {[
-            {description: 'Email', text: 'lentonneale@gmail.com'},
-            {description: 'LinkedIn', text: 'https://www.linkedin.com/in/lenton-neale-726253123/'},
-            {description: 'Other', text: 'Other Info'}
+            {label: 'Email', url: 'lentonneale@gmail.com', itemtype: "email" },
+            {label: 'LinkedIn', url: 'https://www.linkedin.com/in/lenton-neale-726253123/', itemtype: "external-link" },
+            {label: 'Other', text: 'Other Info'}
         ]}
         >
             <div>

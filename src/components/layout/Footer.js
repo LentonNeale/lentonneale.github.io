@@ -6,7 +6,7 @@ const Footer = () => {
   const { theme } = useTheme();
   return (
     <footer className={`footer-${theme}`} style={{ height: '5vh', border: '1px solid var(--heading-color)' }}>
-    <p className={`footer-text-${theme}`}>© 2024 My Website. All rights reserved.</p>
+    <p className={`footer-text-${theme}`}>© 2024 LentonNeale.github.io. All rights reserved.</p>
   </footer>
   );
   };

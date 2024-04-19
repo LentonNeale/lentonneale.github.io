@@ -4,12 +4,9 @@ import { NavLink } from "react-router-dom";
 import { Envelope, Linkedin } from "react-bootstrap-icons";
 import './SideBar.scss';
 
-const isExternalLink = (url) => {
-  return /^https:\/\//.test(url);
-};
 
-const SideBar = ({ type, items, position }) => {
-  const [isExpanded, setIsExpanded] = useState(true);
+const SideBar = ({ items, position }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const { theme } = useTheme();
 
   const toggleSidebar = () => {
@@ -20,15 +17,17 @@ const SideBar = ({ type, items, position }) => {
     setIsExpanded(true);
   };
 
-  const renderLinkItem = (link, index) => (
-    <li key={index}>
-      {isExternalLink(link.url) ? (
-        <NavLink className={`sidebar-link-${theme}`} href={link.url} target="_blank" rel="noopener noreferrer">
-          {link.label}
-        </NavLink>
-      ) : (
+  const renderNavItem = (link) => (
+    <li >
         <NavLink className={`sidebar-link-${theme}`} to={link.url}>{link.label}</NavLink>
-      )}
+    </li>
+  );
+
+  const renderExternalLinkItem = (link) => (
+    <li>
+      <a className={`sidebar-link-${theme}`} href={link.url} target="_blank" rel="noopener noreferrer">
+        {link.label}
+      </a>
     </li>
   );
 
@@ -50,37 +49,51 @@ const SideBar = ({ type, items, position }) => {
     </div>
   );
 
-  const renderInfoItem = (info, index) => (
-    <li key={index}>
-      {info.description === 'Email' ? (
-        <div>
-          <div> Contact Me: </div>
-          <NavLink href={`mailto:${info.text}`}>
-            <Envelope />
-          </NavLink>
-        </div>
-      ) : info.description === 'LinkedIn' ? (
-        <NavLink href={info.text} target="_blank" rel="noopener noreferrer">
-          <Linkedin />
-        </NavLink>
-      ) : (
-        <div>{info.description}: {info.text}</div>
-      )}
-    </li>
+  const renderEmailItem =(link) =>(
+    <NavLink href={`mailto:${link.text}`}>
+            <Envelope /> 
+    </NavLink>
   );
 
-  const renderSidebarContent = () => {
-    switch (type) {
-      case 'links':
-        return items.map(renderLinkItem);
-      case 'progress':
-        return items.map(renderProgressItem);
-      case 'info':
-        return items.map(renderInfoItem);
-      default:
-        return <div> <h3> SideBar </h3></div>;
-    }
-  };
+  // const renderInfoItem = (info, index) => (
+  //   <li key={index}>
+  //     {info.description === 'Email' ? (
+  //       <div>
+  //         <div> Contact Me: </div>
+  //         <NavLink href={`mailto:${info.text}`}>
+  //           <Envelope />
+  //         </NavLink>
+  //       </div>
+  //     ) : info.description === 'LinkedIn' ? (
+  //       <NavLink href={info.text} target="_blank" rel="noopener noreferrer">
+  //         <Linkedin />
+  //       </NavLink>
+  //     ) : (
+  //       <div>{info.description}: {info.text}</div>
+  //     )}
+  //   </li>
+  // );
+
+  const renderSidebarContent = (items) => {
+    return items.map((item) => {
+      switch (item.itemtype) {
+          case 'navigation':
+              return renderNavItem(item);
+          case 'external-link':
+              return renderExternalLinkItem(item);
+          case 'progress':
+              return renderProgressItem(item);
+          case 'email':
+              return renderEmailItem(item);
+          default:
+              return (
+                  <div key={item.label} className="default-item">
+                      <h3>Sidebar</h3>
+                  </div>
+              );
+      }
+  });
+};
 
   return (
     <div className={`sidebar${isExpanded ? "" : "collapsed-"}-${theme}`}>
@@ -96,7 +109,7 @@ const SideBar = ({ type, items, position }) => {
           </div>
           <div>
             <div className="sidebar-content">
-              {renderSidebarContent()}
+              {renderSidebarContent(items)}
             </div>
           </div>
         </>
