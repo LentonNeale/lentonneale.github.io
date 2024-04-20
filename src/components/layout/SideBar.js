@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTheme } from '../theme/ThemeProvider';
 import { NavLink } from "react-router-dom";
-import { Envelope, Linkedin } from "react-bootstrap-icons";
+import { Envelope, Linkedin, Git} from "react-bootstrap-icons";
 import './SideBar.scss';
 
 
@@ -23,13 +23,30 @@ const SideBar = ({ items, position }) => {
     </li>
   );
 
-  const renderExternalLinkItem = (link) => (
-    <li>
-      <a className={`sidebar-link-${theme}`} href={link.url} target="_blank" rel="noopener noreferrer">
-        {link.label}
-      </a>
-    </li>
-  );
+  const renderExternalLinkItem = (link, theme) => {
+    let content;
+  
+    // Determine the content based on link.label using switch
+    switch (link.label) {
+      case 'LinkedIn':
+        content = <Linkedin />;
+        break;
+      case 'Website Repo':
+        content = <Git />;
+        break;
+      default:
+        content = link.label;
+    }
+  
+    // Return the list item containing the link and the determined content
+    return (
+      <li>
+        <a className={`sidebar-link-${theme}`} href={link.url} target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
+      </li>
+    );
+  };
 
   const renderProgressItem = (progress) => (
     <div className="progress-item " key={progress.label}>
@@ -55,24 +72,6 @@ const SideBar = ({ items, position }) => {
     </NavLink>
   );
 
-  // const renderInfoItem = (info, index) => (
-  //   <li key={index}>
-  //     {info.description === 'Email' ? (
-  //       <div>
-  //         <div> Contact Me: </div>
-  //         <NavLink href={`mailto:${info.text}`}>
-  //           <Envelope />
-  //         </NavLink>
-  //       </div>
-  //     ) : info.description === 'LinkedIn' ? (
-  //       <NavLink href={info.text} target="_blank" rel="noopener noreferrer">
-  //         <Linkedin />
-  //       </NavLink>
-  //     ) : (
-  //       <div>{info.description}: {info.text}</div>
-  //     )}
-  //   </li>
-  // );
 
   const renderSidebarContent = (items) => {
     return items.map((item) => {

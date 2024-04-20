@@ -8,13 +8,13 @@ const BodyLayout = ({children,leftsidebarItems, rightsidebarItems}) => {
     const { theme } = useTheme();
     return (
         <div className={`main-${theme} d-flex flex-row`}  style={{height: '90vh'}}>
-            {<SideBar 
-            items = {leftsidebarItems}
-            position='left' /> }
+            {leftsidebarItems && <SideBar
+                items={leftsidebarItems}
+                position='left' />}
             <div className='flex-grow-1 overflow-auto'>{children}</div>
-            {<SideBar
-            items = {rightsidebarItems}
-            position='right' /> }
+            {rightsidebarItems && <SideBar
+                items={rightsidebarItems}
+                position='right' />}
         </div>
     )
 

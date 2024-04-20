@@ -8,7 +8,6 @@ const About = () => {
     const { theme } = useTheme();
     return (
         <BodyLayout 
-        leftSideBarType = "info"
         leftsidebarItems = {[
             {description: 'Email', text: 'lentonneale@gmail.com'},
             {description: 'LinkedIn', text: 'https://www.linkedin.com/in/lenton-neale-726253123/'},

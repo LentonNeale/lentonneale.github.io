@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from '../theme/ThemeProvider';
 // import { NavLink } from "react-router-dom";
-import { Navbar, Nav, NavLink } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import { NavLink } from "react-router-dom";
 import { MoonFill, SunFill } from "react-bootstrap-icons"
 import './NavBar.scss'
 
@@ -19,13 +20,13 @@ const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="navbar-nav mx-5 me-auto mb-3 mb-lg-0">
               <Nav.Item className="nav-item mx-2">
-                <NavLink className="nav-link mb-2 mb-lg-0" href="/">Home</NavLink>
+                <NavLink className="nav-link mb-2 mb-lg-0" to="/">Home</NavLink>
               </Nav.Item>
               <Nav.Item className="nav-item mx-2">
-                <NavLink className="nav-link mb-2 mb-lg-0" href="/about">About</NavLink>
+                <NavLink className="nav-link mb-2 mb-lg-0" to="/about">About</NavLink>
               </Nav.Item>
               <Nav.Item className="nav-item mx-2">
-                <NavLink className="nav-link mb-2 mb-lg-0" href="/contact">Contact</NavLink>
+                <NavLink className="nav-link mb-2 mb-lg-0" to="/contact">Contact</NavLink>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

@@ -13,7 +13,7 @@ const Home = () => {
                 { label: 'Home', url: '/' , itemtype: "navigation"},
                 { label: 'About', url: '/about' , itemtype: "navigation"},
                 { label: 'Contact', url: '/contact' , itemtype: "navigation"},
-                { label: 'Website Git Repo', url: 'https://github.com/LentonNeale/lentonneale.github.io', itemtype: "external-link" },
+                { label: 'Website Repo', url: 'https://github.com/LentonNeale/lentonneale.github.io', itemtype: "external-link" },
 
             ]}
             rightsidebarItems={[
